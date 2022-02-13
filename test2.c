@@ -3,9 +3,11 @@
 
 int main()
 {
-    char *str;
-    str=(char*)malloc(10*sizeof(char));
-    scanf("%s", str);
-    printf("%s", *str);
+    int *p, b;
+    // scanf("%d , %d", p, &b);
+    scanf("%d", p);
+    scanf("%d", &b);
+    printf("%d\n", *p);
+    printf("%d\n", b);
     return 0;
 }
