@@ -86,9 +86,28 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+union u
+{
+    int *a;
+    char *b;
+};
+
+void ualloc(union u *ptr)
+{
+    ptr->a=(int*)malloc(sizeof(int));
+    ptr->b=(char*)malloc(sizeof(char));
+}
+
 int main()
 {
-    char *ar;
-    
+    union u *obj;
+
+    obj=(union u*)malloc(sizeof(union u));
+    ualloc(obj);
+
+    *obj->a=65;
+    printf("%d\n", *obj->a);
+    printf("%c\n", *obj->b);
+
     return 0;
 }
