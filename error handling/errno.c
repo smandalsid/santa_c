@@ -1,11 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<errno.h>
+
 
 int main()
 {
     FILE *f;
-    f=fopen("test.txt", "w");
-    fprintf(f, "This is my second file.\n");
+    f=fopen("kuchbhi.txt", "w");
+    printf("Error: %d\n", errno);
     fclose(f);
     return 0;
 }
